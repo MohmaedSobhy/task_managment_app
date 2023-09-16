@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
 import 'package:task_managment_app/core/localization/app_string.dart';
 import 'package:task_managment_app/core/widgets/button.dart';
+import 'package:task_managment_app/core/widgets/header_txt.dart';
 import 'package:task_managment_app/core/widgets/text_form_field.dart';
 import 'package:task_managment_app/feature/login/controller/login_cubit_cubit.dart';
 import 'package:task_managment_app/feature/login/widgets/check_box.dart';
@@ -39,28 +39,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   child: ListView(
                     children: [
-                      SizedBox(
-                        height: MediaQuery.sizeOf(context).height * 0.15,
-                      ),
-                      Text(
-                        AppString.welcome,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.sizeOf(context).height * 0.02,
-                      ),
-                      const Text(
-                        AppString.loginTxt,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: AppColor.gray,
-                        ),
+                      const HeaderText(
+                        decription: AppString.loginTxt,
+                        title: AppString.welcome,
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.03,

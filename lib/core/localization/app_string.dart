@@ -13,10 +13,11 @@ abstract class AppString {
   static const String addUser = "Add user!";
   static const String addDepartment = "Add Department!";
   static const String updateDepartment = "Update Department!";
+
   static const String addUserDescription =
       "Create a new user now and assign them tasks right away.";
 
-  static const String newDepartmentDescription =
+  static const String addDepartmentDescription =
       "Create a new department now and assign manager to start the work!";
 
   static const String updateDepartmentDescibe =
@@ -24,7 +25,7 @@ abstract class AppString {
 
   static const String updateUserDetails = "Update User Details!";
 
-  static const String updateUserDetailsDecription =
+  static const String updateUserDecription =
       "Update user details and give them a new identiy.";
 
   static const String addTask = "Add New Task";

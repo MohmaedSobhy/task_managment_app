@@ -1,5 +1,3 @@
-part of 'login_cubit_cubit.dart';
-
 abstract class LoginState {}
 
 final class LoginCubitInitial extends LoginState {}
