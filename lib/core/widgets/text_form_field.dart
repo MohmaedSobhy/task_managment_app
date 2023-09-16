@@ -6,12 +6,14 @@ class CustomeTextFormField extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   var onValidate;
   final String hint;
+  final TextInputType textInputType;
 
   CustomeTextFormField({
     super.key,
     required this.controller,
     this.onValidate,
     required this.hint,
+    required this.textInputType,
   });
 
   @override
@@ -20,6 +22,7 @@ class CustomeTextFormField extends StatelessWidget {
       controller: controller,
       validator: onValidate,
       cursorColor: Theme.of(context).primaryColor,
+      keyboardType: textInputType,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(

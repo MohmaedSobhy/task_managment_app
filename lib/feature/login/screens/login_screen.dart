@@ -49,6 +49,7 @@ class LoginScreen extends StatelessWidget {
                       CustomeTextFormField(
                         controller: LoginCubit.get(context).emailController,
                         hint: AppString.email,
+                        textInputType: TextInputType.emailAddress,
                         onValidate: (value) {
                           if (value.toString().isEmpty) {
                             return AppString.enterEmail;
@@ -62,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                       CustomeTextFormField(
                         controller: LoginCubit.get(context).passwordController,
                         hint: AppString.password,
+                        textInputType: TextInputType.visiblePassword,
                         onValidate: (value) {
                           if (value.toString().isEmpty) {
                             return AppString.password;
