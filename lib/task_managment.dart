@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/feature/login/screens/login_screen.dart';
+import 'core/color/app_color.dart';
+import 'feature/login/screens/login_screen.dart';
 
 class TaskMangmentApp extends StatelessWidget {
   const TaskMangmentApp({super.key});

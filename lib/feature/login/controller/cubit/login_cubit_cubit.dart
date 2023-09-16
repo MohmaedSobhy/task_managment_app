@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/api/api.dart';
-import 'package:task_managment_app/core/api/end_points.dart';
-
+import '../../../../core/api/api.dart';
+import '../../../../core/api/end_points.dart';
 part 'login_cubit_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {

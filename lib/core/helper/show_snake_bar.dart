@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-abstract class SnakeBar {
+abstract class SnakeBarHelper {
   static void showSnakeBar({required String title, required String message}) {
     Get.snackbar(
       title,
