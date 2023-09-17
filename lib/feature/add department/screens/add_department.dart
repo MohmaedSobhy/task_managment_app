@@ -4,8 +4,8 @@ import 'package:task_managment_app/core/widgets/button.dart';
 import 'package:task_managment_app/core/widgets/header_txt.dart';
 import 'package:task_managment_app/core/widgets/text_form_field.dart';
 
-class AddNewDepartmentScreen extends StatelessWidget {
-  const AddNewDepartmentScreen({super.key});
+class AddDepartmentScreen extends StatelessWidget {
+  const AddDepartmentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

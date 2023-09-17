@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managment_app/feature/add%20department/screens/add_department.dart';
 import 'package:task_managment_app/feature/add%20user/screens/add_user_screen.dart';
 import 'route_name.dart';
 import '../../feature/home/screens/home_screen.dart';
@@ -18,8 +19,14 @@ abstract class AppRoute {
           },
         );
       case RouteName.addUser:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const AddUserScreen();
+          },
+        );
+      case RouteName.addDepartment:
         return MaterialPageRoute(builder: (_) {
-          return AddUserScreen();
+          return AddDepartmentScreen();
         });
     }
     return null;
