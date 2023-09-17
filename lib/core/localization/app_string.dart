@@ -7,11 +7,14 @@ abstract class AppString {
   static const String keepMeLogged = "Keep me logged in";
   static const String password = "Password";
   static const String login = "LOGIN";
+  static const String home = "Home";
+
   static const String enterEmail = "Enter your Email";
   static const String enterPassword = "Enter your Password";
   static const String loginSuccess = "successfully Login";
   static const String addUser = "Add user!";
   static const String addDepartment = "Add Department!";
+  static const String addManager = "Add Manager ";
   static const String updateDepartment = "Update Department!";
 
   static const String addUserDescription =

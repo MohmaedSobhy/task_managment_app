@@ -1,7 +1,11 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class CacheHelper {
+class StorageHelper {
   static late FlutterSecureStorage storage;
+  static const tokenKey = "token";
+  static const userKey = "username";
+  static const keepLogin = "savedKey";
+  static const usertypekey = "user_type";
 
   static init() async {
     storage = const FlutterSecureStorage();

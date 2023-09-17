@@ -1,5 +1,5 @@
 abstract class RouteName {
-  static const String login = '/Login';
+  static const String login = '/';
   static const String home = "Home";
   static const String addUser = "Add User";
   static const String addManger = "Add Manager";

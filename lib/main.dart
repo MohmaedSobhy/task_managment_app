@@ -4,6 +4,6 @@ import 'task_managment.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await CacheHelper.init();
+  await StorageHelper.init();
   runApp(const TaskMangmentApp());
 }

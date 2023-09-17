@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managment_app/feature/home/view/admin_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,9 +7,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
-        children: [],
+      drawer: const AdminDrawer(),
+      body: SafeArea(
+        child: ListView(
+          children: [],
+        ),
       ),
     );
   }
