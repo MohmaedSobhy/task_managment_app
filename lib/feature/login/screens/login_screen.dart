@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/route/app_route.dart';
 import 'package:task_managment_app/core/route/route_name.dart';
 import 'package:task_managment_app/core/widgets/button.dart';
 import 'package:task_managment_app/core/widgets/header_txt.dart';

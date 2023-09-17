@@ -37,7 +37,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   void _succefullResponse({required Map<String, dynamic> json}) {
     if (checkBoxValue) {
-      StorageHelper.addKey(key: StorageHelper.keepLogin, value: true);
+      StorageHelper.addKey(key: StorageHelper.keepLogin, value: "inApp");
     }
     StorageHelper.addKey(
         key: StorageHelper.tokenKey, value: json[StorageHelper.tokenKey]);
