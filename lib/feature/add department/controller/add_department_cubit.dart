@@ -35,6 +35,7 @@ class AddDepartmentCubit extends Cubit<AddDepartmentState> {
 
   void _checkMessage({required Map<String, dynamic> json}) {
     if (json[APIKey.status]) {
+      _clearTextField();
       emit(SucceedAddDepartment());
     } else {
       emit(ErrorAddDepartment());

@@ -59,4 +59,5 @@ abstract class AppString {
 
   static const String networkFailed = "Check your Network";
   static const String departmentExist = "Department Name Already Exist";
+  static const String addDepartmentSucceed = "Department Add Successfully";
 }

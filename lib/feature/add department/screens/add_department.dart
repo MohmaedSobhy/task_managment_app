@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:task_managment_app/core/helper/show_snake_bar.dart';
 import 'package:task_managment_app/core/localization/app_string.dart';
 import 'package:task_managment_app/core/widgets/button.dart';
@@ -35,9 +36,10 @@ class AddDepartmentScreen extends StatelessWidget {
                       backGround: Colors.red);
                 }
                 if (state is SucceedAddDepartment) {
+                  Get.back();
                   SnakeBarHelper.showSnakeBar(
-                    title: "Network",
-                    message: AppString.networkFailed,
+                    title: "Succeed",
+                    message: AppString.addDepartmentSucceed,
                   );
                 }
               },
