@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_managment_app/core/shared/shared_date.dart';
 import 'package:task_managment_app/feature/login/controller/login_cubit_state.dart';
 import '../../../core/api/api.dart';
 import '../../../core/api/end_points.dart';
@@ -23,11 +24,12 @@ class LoginCubit extends Cubit<LoginState> {
   void userLogin() {
     String email = emailController.text.toString();
     String password = passwordController.text.toString();
-    API.postMethod(baseUrl: EndPoints.login, body: {
-      'email': email,
-      'password': password,
-    }).then((response) {
-      if (checkBoxValue) {}
-    }).catchError((error) {});
+    API
+        .postMethod(baseUrl: EndPoints.login, body: {
+          'email': email,
+          'password': password,
+        })
+        .then((response) {})
+        .catchError((error) {});
   }
 }
