@@ -5,4 +5,7 @@ abstract class APIKey {
   static const usertype = "user_type";
   static const name = 'name';
   static const status = 'status';
+  static const phone = "phone";
+  static const password = "possword";
+  static const email = "email";
 }
