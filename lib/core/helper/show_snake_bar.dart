@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class SnakeBarHelper {
-  static void showSnakeBar({required String title, required String message}) {
+  static void showSnakeBar(
+      {required String title, required String message, Color? backGround}) {
     Get.snackbar(
       title,
       "",
-      backgroundColor: Colors.green,
+      backgroundColor: (backGround == null) ? Colors.green : backGround,
       colorText: Colors.white,
       messageText: Text(
         message,

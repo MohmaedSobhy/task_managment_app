@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 abstract class AppString {
   static const String welcome = "Welcome Back!";
   static const String loginTxt =
@@ -54,4 +56,7 @@ abstract class AppString {
   static const String description = "Description";
 
   static const String assignedEmployee = "Assigned Employee";
+
+  static const String networkFailed = "Check your Network";
+  static const String departmentExist = "Department Name Already Exist";
 }
