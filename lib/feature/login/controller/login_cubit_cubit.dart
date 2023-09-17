@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_managment_app/core/api/api_keys.dart';
 import 'package:task_managment_app/core/shared/shared_date.dart';
 import 'package:task_managment_app/feature/login/controller/login_cubit_state.dart';
 import '../../../core/api/api.dart';
@@ -37,15 +38,11 @@ class LoginCubit extends Cubit<LoginState> {
 
   void _succefullResponse({required Map<String, dynamic> json}) {
     if (checkBoxValue) {
-      StorageHelper.addKey(key: StorageHelper.keepLogin, value: "inApp");
+      StorageHelper.addKey(key: APIKey.keepLogin, value: "inApp");
     }
-    StorageHelper.addKey(
-        key: StorageHelper.tokenKey, value: json[StorageHelper.tokenKey]);
-    StorageHelper.addKey(
-        key: StorageHelper.userKey, value: json[StorageHelper.userKey]);
-
-    StorageHelper.addKey(
-        key: StorageHelper.usertypekey, value: json[StorageHelper.usertypekey]);
+    StorageHelper.addKey(key: APIKey.token, value: json[APIKey.token]);
+    StorageHelper.addKey(key: APIKey.user, value: json[APIKey.user]);
+    StorageHelper.addKey(key: APIKey.usertype, value: json[APIKey.usertype]);
 
     emit(LoginSucceed());
   }

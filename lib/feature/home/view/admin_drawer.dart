@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_managment_app/core/localization/app_string.dart';
+import 'package:task_managment_app/core/route/route_name.dart';
 
 class AdminDrawer extends StatelessWidget {
-  const AdminDrawer({super.key});
+  final String userName;
+  const AdminDrawer({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +13,13 @@ class AdminDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Colors.blue,
             ),
             child: Text(
-              'Admin Panel',
-              style: TextStyle(
+              userName,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 24,
               ),
@@ -33,18 +36,22 @@ class AdminDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text(AppString.addUser),
             onTap: () {
-              Navigator.pop(context);
+              Get.offAllNamed(RouteName.addUser);
             },
           ),
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text(AppString.addManager),
-            onTap: () {},
+            onTap: () {
+              Get.offAllNamed(RouteName.addManger);
+            },
           ),
           ListTile(
             leading: const Icon(Icons.dataset_rounded),
             title: const Text(AppString.addDepartment),
-            onTap: () {},
+            onTap: () {
+              Get.offAllNamed(RouteName.addDepartment);
+            },
           ),
         ],
       ),

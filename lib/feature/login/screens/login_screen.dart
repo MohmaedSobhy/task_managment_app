@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
         child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             if (state is LoginSucceed) {
-              Get.toNamed(RouteName.home);
+              Get.offAllNamed(RouteName.home);
               SnakeBarHelper.showSnakeBar(
                 title: "Login",
                 message: AppString.loginSuccess,
