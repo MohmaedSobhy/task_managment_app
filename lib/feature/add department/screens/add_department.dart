@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_managment_app/core/helper/show_snake_bar.dart';
 import 'package:task_managment_app/core/localization/app_string.dart';
 import 'package:task_managment_app/core/widgets/button.dart';
 import 'package:task_managment_app/core/widgets/header_txt.dart';
@@ -19,7 +20,27 @@ class AddDepartmentScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.sizeOf(context).width * 0.03),
             child: BlocConsumer<AddDepartmentCubit, AddDepartmentState>(
-              listener: (context, state) {},
+              listener: (context, state) {
+                if (state is FailedAddDepartment) {
+                  SnakeBarHelper.showSnakeBar(
+                    title: "Network",
+                    message: AppString.networkFailed,
+                    backGround: Colors.red,
+                  );
+                }
+                if (state is ErrorAddDepartment) {
+                  SnakeBarHelper.showSnakeBar(
+                      title: "Message",
+                      message: AppString.departmentExist,
+                      backGround: Colors.red);
+                }
+                if (state is SucceedAddDepartment) {
+                  SnakeBarHelper.showSnakeBar(
+                    title: "Network",
+                    message: AppString.networkFailed,
+                  );
+                }
+              },
               builder: (context, state) {
                 return Form(
                   key: AddDepartmentCubit.get(context).formkey,

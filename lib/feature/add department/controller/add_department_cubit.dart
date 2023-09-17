@@ -40,4 +40,8 @@ class AddDepartmentCubit extends Cubit<AddDepartmentState> {
       emit(ErrorAddDepartment());
     }
   }
+
+  void _clearTextField() {
+    textEditingController.text = "";
+  }
 }
