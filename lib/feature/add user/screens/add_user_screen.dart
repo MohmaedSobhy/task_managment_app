@@ -38,6 +38,12 @@ class AddUserScreen extends StatelessWidget {
                         controller: AddUserCubit.get(context).name,
                         hint: AppString.name,
                         textInputType: TextInputType.name,
+                        onValidate: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Enter Name";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,
@@ -46,6 +52,12 @@ class AddUserScreen extends StatelessWidget {
                         controller: AddUserCubit.get(context).email,
                         hint: AppString.email,
                         textInputType: TextInputType.emailAddress,
+                        onValidate: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Enter Email";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,
@@ -54,6 +66,12 @@ class AddUserScreen extends StatelessWidget {
                         controller: AddUserCubit.get(context).phone,
                         hint: AppString.phone,
                         textInputType: TextInputType.phone,
+                        onValidate: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Enter phone";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,
@@ -62,6 +80,12 @@ class AddUserScreen extends StatelessWidget {
                         controller: AddUserCubit.get(context).password,
                         hint: AppString.password,
                         textInputType: TextInputType.visiblePassword,
+                        onValidate: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Enter password";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,
@@ -70,7 +94,6 @@ class AddUserScreen extends StatelessWidget {
                         query: AddUserCubit.get(context).user,
                         choises: AppString.users,
                         onChange: (value) {
-                          print("hello");
                           AddUserCubit.get(context)
                               .onChangeRadio(choise: value);
                         },
@@ -80,12 +103,7 @@ class AddUserScreen extends StatelessWidget {
                       ),
                       CustomButton(
                         onTap: () {
-                          if (AddUserCubit.get(context)
-                              .formkey
-                              .currentState!
-                              .validate()) {
-                            AddUserCubit.get(context).addUser();
-                          }
+                          AddUserCubit.get(context).addUser();
                         },
                         title: AppString.create,
                       ),

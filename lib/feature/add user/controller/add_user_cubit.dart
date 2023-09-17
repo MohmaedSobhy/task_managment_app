@@ -22,22 +22,31 @@ class AddUserCubit extends Cubit<AddUserState> {
     return BlocProvider.of(context);
   }
 
-  void addUser() {
+  void addUser() async {
     int index = AppString.users.indexOf(user);
-    Map<String, dynamic> body = {
-      APIKey.name: name.text.toString(),
-      APIKey.phone: phone.text.toString(),
-      APIKey.password: password.text.toString(),
-      APIKey.usertype: index,
-      APIKey.email: email,
+    Map<String, String> body = {
+      APIKey.name: "noor",
+      APIKey.email: "nooor@gmai.com",
+      APIKey.phone: "19823",
+      APIKey.password: "password",
+      APIKey.usertype: "2",
     };
     String token = "";
-    StorageHelper.getValue(key: APIKey.token).then((value) {
+    await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
 
     API
-        .postMethod(baseUrl: EndPoints.addUser, body: body, token: token)
+        .postMethod(
+            baseUrl: EndPoints.addUser,
+            body: {
+              "name": name.text.toString(),
+              "email": email.text.toString(),
+              "phone": phone.text.toString(),
+              "password": password.text.toString(),
+              "user_type": index.toString(),
+            },
+            token: token)
         .then((response) {
       print(response.body);
     });

@@ -6,7 +6,7 @@ abstract class APIKey {
   static const String name = 'name';
   static const String status = 'status';
   static const String phone = "phone";
-  static const String password = "possword";
+  static const String password = "password";
   static const String email = "email";
   static const String id = 'id';
   static const String manager = '';

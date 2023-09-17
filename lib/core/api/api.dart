@@ -11,7 +11,7 @@ abstract class API {
 
   static Future<http.Response> postMethod(
       {required String baseUrl,
-      required Map<String, dynamic> body,
+      required Map<String, String> body,
       String? token}) async {
     Map<String, String> headers = {};
     if (token != null) {
