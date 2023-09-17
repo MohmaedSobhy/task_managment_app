@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 abstract class AppString {
   static const String welcome = "Welcome Back!";
   static const String loginTxt =
@@ -43,6 +41,8 @@ abstract class AppString {
   static const admin = "Admin";
   static const String manager = "Manager";
   static const String user = "User";
+
+  static const List<String> users = ['Admin', 'Manager', 'User'];
 
   static const String assignManager = "Assigned Manager";
 
