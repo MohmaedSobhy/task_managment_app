@@ -9,4 +9,5 @@ abstract class APIKey {
   static const String password = "possword";
   static const String email = "email";
   static const String id = 'id';
+  static const String manager = '';
 }

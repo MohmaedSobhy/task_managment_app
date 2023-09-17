@@ -11,7 +11,9 @@ class Department {
     return Department(
       id: data[APIKey.id],
       name: data[APIKey.name],
-      mangager: data[APIKey.manager],
+      mangager: (data[APIKey.manager] != null)
+          ? Manager.fromJson(data[APIKey.manager])
+          : null,
     );
   }
 }
