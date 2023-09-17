@@ -26,7 +26,7 @@ abstract class AppRoute {
         );
       case RouteName.addDepartment:
         return MaterialPageRoute(builder: (_) {
-          return AddDepartmentScreen();
+          return const AddDepartmentScreen();
         });
     }
     return null;

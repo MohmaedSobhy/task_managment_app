@@ -11,28 +11,32 @@ class AddDepartmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          children: [
-            const HeaderText(
-              decription: AppString.addDepartmentDescription,
-              title: AppString.addDepartment,
-            ),
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.02,
-            ),
-            CustomeTextFormField(
-              controller: TextEditingController(),
-              hint: AppString.name,
-              textInputType: TextInputType.text,
-            ),
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.02,
-            ),
-            CustomButton(
-              onTap: () {},
-              title: AppString.create,
-            )
-          ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.sizeOf(context).width * 0.03),
+          child: ListView(
+            children: [
+              const HeaderText(
+                decription: AppString.addDepartmentDescription,
+                title: AppString.addDepartment,
+              ),
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height * 0.04,
+              ),
+              CustomeTextFormField(
+                controller: TextEditingController(),
+                hint: AppString.name,
+                textInputType: TextInputType.text,
+              ),
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height * 0.04,
+              ),
+              CustomButton(
+                onTap: () {},
+                title: AppString.create,
+              )
+            ],
+          ),
         ),
       ),
     );
