@@ -3,4 +3,5 @@ abstract class EndPoints {
   static String login = "${baseUrl}auth/login";
   static String addDepartment = "${baseUrl}department/store";
   static String addUser = "${baseUrl}user/store";
+  static String allDeparment = "${baseUrl}department/index";
 }

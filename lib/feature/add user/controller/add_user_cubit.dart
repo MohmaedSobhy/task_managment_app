@@ -38,7 +38,9 @@ class AddUserCubit extends Cubit<AddUserState> {
 
     API
         .postMethod(baseUrl: EndPoints.addUser, body: body, token: token)
-        .then((value) {});
+        .then((response) {
+      print(response.body);
+    });
   }
 
   void onChangeRadio({required String choise}) {

@@ -36,21 +36,28 @@ class AdminDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text(AppString.addUser),
             onTap: () {
-              Get.offAllNamed(RouteName.addUser);
+              Get.toNamed(RouteName.addUser);
             },
           ),
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text(AppString.addManager),
             onTap: () {
-              Get.offAllNamed(RouteName.addManger);
+              Get.toNamed(RouteName.addManger);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dataset_rounded),
             title: const Text(AppString.addDepartment),
             onTap: () {
-              Get.offAllNamed(RouteName.addDepartment);
+              Get.toNamed(RouteName.addDepartment);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.dataset_rounded),
+            title: const Text(AppString.updateDepartment),
+            onTap: () {
+              Get.toNamed(RouteName.updateDepartment);
             },
           ),
         ],

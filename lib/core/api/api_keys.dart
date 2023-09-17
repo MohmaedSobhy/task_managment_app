@@ -1,11 +1,12 @@
 abstract class APIKey {
-  static const token = "token";
-  static const user = "username";
-  static const keepLogin = "savedKey";
-  static const usertype = "user_type";
-  static const name = 'name';
-  static const status = 'status';
-  static const phone = "phone";
-  static const password = "possword";
-  static const email = "email";
+  static const String token = "token";
+  static const String user = "username";
+  static const String keepLogin = "savedKey";
+  static const String usertype = "user_type";
+  static const String name = 'name';
+  static const String status = 'status';
+  static const String phone = "phone";
+  static const String password = "possword";
+  static const String email = "email";
+  static const String id = 'id';
 }
