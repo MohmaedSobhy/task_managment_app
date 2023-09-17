@@ -1,5 +1,11 @@
 part of 'add_department_cubit.dart';
 
-abstract class DepartmentState {}
+abstract class AddDepartmentState {}
 
-final class DepartMentInitial extends DepartmentState {}
+class AddDepartmentInitial extends AddDepartmentState {}
+
+class FailedAddDepartment extends AddDepartmentState {}
+
+class SucceedAddDepartment extends AddDepartmentState {}
+
+class ErrorAddDepartment extends AddDepartmentState {}

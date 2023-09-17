@@ -3,4 +3,5 @@ abstract class APIKey {
   static const user = "username";
   static const keepLogin = "savedKey";
   static const usertype = "user_type";
+  static const name = 'name';
 }

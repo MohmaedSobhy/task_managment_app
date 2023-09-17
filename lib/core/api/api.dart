@@ -10,11 +10,20 @@ abstract class API {
   }
 
   static Future<http.Response> postMethod(
-      {required String baseUrl, required Map<String, String> body}) async {
-    http.Response response = await http.post(Uri.parse(baseUrl), body: body);
-    if (response.statusCode == 200) {
-      return response;
+      {required String baseUrl,
+      required Map<String, String> body,
+      String? token}) async {
+    Map<String, String> headers = {};
+    if (token != null) {
+      headers.addAll({
+        'Authorization': 'Bearer $token',
+      });
     }
-    return throw Exception("Error Failed in Network");
+    http.Response response = await http.post(
+      Uri.parse(baseUrl),
+      body: body,
+      headers: headers,
+    );
+    return response;
   }
 }
