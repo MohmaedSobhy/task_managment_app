@@ -24,13 +24,7 @@ class AddUserCubit extends Cubit<AddUserState> {
 
   void addUser() async {
     int index = AppString.users.indexOf(user);
-    Map<String, String> body = {
-      APIKey.name: "noor",
-      APIKey.email: "nooor@gmai.com",
-      APIKey.phone: "19823",
-      APIKey.password: "password",
-      APIKey.usertype: "2",
-    };
+
     String token = "";
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
@@ -47,9 +41,7 @@ class AddUserCubit extends Cubit<AddUserState> {
               "user_type": index.toString(),
             },
             token: token)
-        .then((response) {
-      print(response.body);
-    });
+        .then((response) {});
   }
 
   void onChangeRadio({required String choise}) {
