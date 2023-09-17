@@ -5,6 +5,7 @@ import 'package:task_managment_app/core/widgets/button.dart';
 import 'package:task_managment_app/core/widgets/header_txt.dart';
 import 'package:task_managment_app/core/widgets/text_form_field.dart';
 import 'package:task_managment_app/feature/add%20user/controller/add_user_cubit.dart';
+import 'package:task_managment_app/feature/add%20user/view/radio_groub.dart';
 
 class AddUserScreen extends StatelessWidget {
   const AddUserScreen({super.key});
@@ -61,6 +62,18 @@ class AddUserScreen extends StatelessWidget {
                         controller: AddUserCubit.get(context).password,
                         hint: AppString.password,
                         textInputType: TextInputType.visiblePassword,
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
+                      CustomeRadioGroup(
+                        query: AddUserCubit.get(context).user,
+                        choises: AppString.users,
+                        onChange: (value) {
+                          print("hello");
+                          AddUserCubit.get(context)
+                              .onChangeRadio(choise: value);
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,
