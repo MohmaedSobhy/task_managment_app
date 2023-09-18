@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
+import 'package:task_managment_app/core/helper/show_toast_message.dart';
 import '../../../core/api/api_keys.dart';
 import '../../../core/api/end_points.dart';
 import '../../../core/shared/shared_date.dart';
@@ -28,13 +29,10 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
 
   void setDepartmentName({required String departmentName}) {
     name.text = departmentName;
-    print("ehll");
-    emit(UpdateDepartmentSuccess());
   }
 
   void loadAllManagers() async {
     String token = "";
-    print('hree');
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
@@ -48,6 +46,7 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
       for (dynamic item in json['data']) {
         // ignore: prefer_interpolation_to_compose_strings
         value = "${item[APIKey.id]}-" + item[APIKey.name];
+
         managers.add(value);
       }
       emit(LoadAllManagerSuccess());
@@ -63,14 +62,24 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
     });
     int managerId = _getManagerId();
     APIManager.postMethod(
-            baseUrl: "${EndPoints.updateDepartment}$id",
-            body: {
-              APIKey.name: name.text.toString(),
-              APIKey.managerId: (managerId).toString(),
-            },
-            token: token)
-        .then((response) {
-      print(response.body);
+      baseUrl: "${EndPoints.updateDepartment}$id",
+      body: {
+        'name': name.text.toString(),
+        'manager_id': '$managerId',
+      },
+      token: token,
+    ).then((response) {
+      if (response.statusCode == 200) {
+        ShowToast.showMessage(
+          message: "Department Update Succeed",
+          color: Colors.green,
+        );
+      } else {
+        ShowToast.showMessage(
+          message: "You can choose only user with type of Manager",
+          color: Colors.red,
+        );
+      }
     }).catchError((error) {});
   }
 

@@ -43,12 +43,9 @@ class UpdateDepartmentScreen extends StatelessWidget {
         body: BlocConsumer<UpdateDepartmentCubit, UpdateDepartmentState>(
           listener: (context, state) {},
           builder: (context, state) {
-            if (UpdateDepartmentCubit.get(context).name.text.isEmpty) {
-              UpdateDepartmentCubit.get(context)
-                  .setDepartmentName(departmentName: department.name);
+            UpdateDepartmentCubit.get(context)
+                .setDepartmentName(departmentName: department.name);
 
-              return const CircleLoading();
-            }
             if (UpdateDepartmentCubit.get(context).managers.isEmpty) {
               UpdateDepartmentCubit.get(context).loadAllManagers();
               return const CircleLoading();
