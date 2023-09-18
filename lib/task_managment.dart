@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_managment_app/feature/User%20Home/screens/user_home_screen.dart';
 import 'core/color/app_color.dart';
 import 'core/route/app_route.dart';
 
@@ -13,7 +14,8 @@ class TaskMangmentApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColor.darkColor,
       ),
-      onGenerateRoute: AppRoute.ongenerateRoute,
+      //onGenerateRoute: AppRoute.ongenerateRoute,
+      home: UserHomeScreen(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/color/app_color.dart';
+import '../color/app_color.dart';
 
 class TaskItem extends StatelessWidget {
   final String state;

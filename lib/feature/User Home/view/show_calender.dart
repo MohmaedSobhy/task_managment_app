@@ -29,7 +29,6 @@ class ShowCalander extends StatelessWidget {
           activeDayColor: Colors.white,
           activeBackgroundDayColor: AppColor.purble,
           dotsColor: Colors.white,
-          selectableDayPredicate: (date) => date.day != 23,
           locale: 'en',
         );
       },

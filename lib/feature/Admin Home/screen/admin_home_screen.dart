@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_managment_app/core/color/app_color.dart';
 import 'package:task_managment_app/core/widgets/custome_header_date.dart';
+import 'package:task_managment_app/feature/Admin%20Home/controller/admin_cubit.dart';
+import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
 import 'package:task_managment_app/feature/Admin%20Home/view/admin_drawer.dart';
 import '../widgets/department_item.dart';
 
@@ -9,45 +12,53 @@ class AdminHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: Builder(builder: (context) {
-          return IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.black,
+    return BlocProvider(
+      create: (context) => AdminCubit(),
+      child: BlocConsumer<AdminCubit, AdminState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0.0,
+              leading: Builder(builder: (context) {
+                return IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                  ),
+                );
+              }),
+              title: const CustomeDate(date: "9/18/2023"),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColor.purble,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor: Colors.white,
+            drawer: const AdminDrawer(userName: "Mohamed Sobhy"),
+            body: ListView.builder(
+              itemCount: 2,
+              itemBuilder: (_, index) {
+                return const DepartmentNameView();
+              },
             ),
           );
-        }),
-        title: const CustomeDate(date: "9/18/2023"),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColor.purble,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.add,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-      backgroundColor: Colors.white,
-      drawer: const AdminDrawer(userName: "Mohamed Sobhy"),
-      body: ListView.builder(
-        itemCount: 2,
-        itemBuilder: (_, index) {
-          return const DepartmentNameView();
         },
       ),
     );

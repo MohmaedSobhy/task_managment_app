@@ -7,20 +7,20 @@ import 'user_home_state.dart';
 class UserHomeCubit extends Cubit<UserHomseState> {
   String userName = '';
   bool isUser = false, isManager = false, isAdmin = false;
-  static UserHomeCubit? _home;
-  String currentDate = DateTime.now().toString().substring(0, 10);
+  static UserHomeCubit? _homeCubit;
   static final _lock = Lock();
+  String currentDate = DateTime.now().toString().substring(0, 10);
   DateTime selectedDate = DateTime.now();
 
   UserHomeCubit() : super(UserHomeInitail());
 
   static UserHomeCubit get(context) {
-    if (_home == null) {
+    if (_homeCubit == null) {
       _lock.synchronized(() {
-        _home ??= BlocProvider.of(context);
+        _homeCubit ??= BlocProvider.of(context);
       });
     }
-    return _home!;
+    return _homeCubit!;
   }
 
   void initialData() async {
