@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managment_app/feature/Admin%20Home/screen/admin_home_screen.dart';
 import 'package:task_managment_app/feature/User%20Home/screens/user_home_screen.dart';
 import '../../feature/add%20department/screens/add_department.dart';
 import '../../feature/add%20user/screens/add_user_screen.dart';
@@ -16,7 +17,7 @@ abstract class AppRoute {
       case RouteName.adminHome:
         return MaterialPageRoute(
           builder: (_) {
-            return UserHomeScreen();
+            return const AdminHomeScreen();
           },
         );
       case RouteName.addUser:

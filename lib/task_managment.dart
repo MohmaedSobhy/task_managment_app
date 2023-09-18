@@ -14,8 +14,8 @@ class TaskMangmentApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColor.darkColor,
       ),
-      //onGenerateRoute: AppRoute.ongenerateRoute,
-      home: UserHomeScreen(),
+      onGenerateRoute: AppRoute.ongenerateRoute,
+      //home: UserHomeScreen(),
     );
   }
 }

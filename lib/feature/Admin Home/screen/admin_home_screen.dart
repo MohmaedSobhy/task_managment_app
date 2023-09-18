@@ -5,6 +5,7 @@ import 'package:task_managment_app/core/widgets/custome_header_date.dart';
 import 'package:task_managment_app/feature/Admin%20Home/controller/admin_cubit.dart';
 import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
 import 'package:task_managment_app/feature/Admin%20Home/view/admin_drawer.dart';
+import 'package:task_managment_app/feature/Admin%20Home/view/all_tasks.dart';
 import '../widgets/department_item.dart';
 
 class AdminHomeScreen extends StatelessWidget {
@@ -52,11 +53,10 @@ class AdminHomeScreen extends StatelessWidget {
             ),
             backgroundColor: Colors.white,
             drawer: const AdminDrawer(userName: "Mohamed Sobhy"),
-            body: ListView.builder(
-              itemCount: 2,
-              itemBuilder: (_, index) {
-                return const DepartmentNameView();
-              },
+            body: Column(
+              children: [
+                Expanded(child: AllTaskViews()),
+              ],
             ),
           );
         },

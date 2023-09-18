@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
@@ -6,7 +5,7 @@ import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.d
 class AdminCubit extends Cubit<AdminState> {
   static AdminCubit? _adminCubit;
   static final _lock = Lock();
-
+  bool isFirstView = false;
   AdminCubit() : super(AdminInitial());
 
   static AdminCubit get(context) {
