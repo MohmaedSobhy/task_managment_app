@@ -218,6 +218,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "percent_indicator",
+      "rootUri": "file:///C:/Users/3LAMYA/AppData/Local/Pub/Cache/hosted/pub.dev/percent_indicator-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///C:/Users/3LAMYA/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.2",
       "packageUri": "lib/",
@@ -320,7 +326,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-09-18T03:48:45.414226Z",
+  "generated": "2023-09-18T09:09:34.704487Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

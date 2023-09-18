@@ -40,8 +40,13 @@ class TaskItem extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Container(
+                    color: AppColor.darkColor,
+                    width: 4,
+                    height: 66,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 6),
+                    padding: const EdgeInsets.only(left: 8),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,8 +63,9 @@ class TaskItem extends StatelessWidget {
                         ),
                         const Text(
                           "Desgin a 20-minute HIIT workout routine.",
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 18,
                             color: AppColor.gray,
                           ),
                         ),
@@ -70,7 +76,7 @@ class TaskItem extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.01,
+              height: MediaQuery.sizeOf(context).height * 0.010,
             ),
             const Row(
               children: [
@@ -85,7 +91,7 @@ class TaskItem extends StatelessWidget {
                 Text(
                   "starts 9/18/2023 - end 10/18/2023",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 15,
                     color: AppColor.darkColor,
                     fontWeight: FontWeight.bold,
                   ),

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import '../../../core/localization/app_string.dart';
 import '../../../core/route/route_name.dart';
 
-class AdminDrawer extends StatelessWidget {
+class UserDrawer extends StatelessWidget {
   final String userName;
-  const AdminDrawer({super.key, required this.userName});
+  const UserDrawer({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {

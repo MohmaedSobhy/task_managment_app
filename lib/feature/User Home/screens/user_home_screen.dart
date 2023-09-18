@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_managment_app/core/widgets/circle_precent_indicator.dart';
 
 import '../../../core/widgets/custome_header_date.dart';
 
@@ -39,9 +40,25 @@ class UserHomeScreen extends StatelessWidget {
               title: CustomeDate(
                 date: UserHomeCubit.get(context).currentDate,
               ),
-              actions: [],
+              actions: [
+                CircleIndicator(
+                  color: Colors.green,
+                  text: "9/20",
+                  backGroud: Colors.green.shade100,
+                ),
+                CircleIndicator(
+                  color: Colors.orange,
+                  text: "4/20",
+                  backGroud: Colors.orange.shade100,
+                ),
+                CircleIndicator(
+                  color: Colors.red,
+                  text: "3/20",
+                  backGroud: Colors.red.shade100,
+                ),
+              ],
             ),
-            drawer: AdminDrawer(
+            drawer: UserDrawer(
               userName: UserHomeCubit.get(context).userName,
             ),
             backgroundColor: Colors.white,
