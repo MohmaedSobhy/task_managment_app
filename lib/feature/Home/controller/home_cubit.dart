@@ -8,6 +8,7 @@ class HomeCubit extends Cubit<HomeState> {
   String userName = '';
   bool isUser = false, isManager = false, isAdmin = false;
   static HomeCubit? _home;
+  String currentDate = DateTime.now().toString().substring(0, 10);
   static final _lock = Lock();
 
   HomeCubit() : super(HomeInitial());
@@ -47,5 +48,6 @@ class HomeCubit extends Cubit<HomeState> {
   void printObject() {
     print(identityHashCode(_home));
   }
+
   // view All taskes
 }

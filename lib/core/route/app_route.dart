@@ -16,7 +16,7 @@ abstract class AppRoute {
       case RouteName.adminHome:
         return MaterialPageRoute(
           builder: (_) {
-            return const HomeScreen();
+            return HomeScreen();
           },
         );
       case RouteName.addUser:
