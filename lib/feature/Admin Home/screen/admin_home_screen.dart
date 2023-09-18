@@ -4,6 +4,8 @@ import 'package:task_managment_app/core/widgets/custome_header_date.dart';
 import 'package:task_managment_app/feature/Admin%20Home/view/admin_drawer.dart';
 import 'package:task_managment_app/feature/Admin%20Home/widgets/employe_item.dart';
 
+import '../widgets/department_item.dart';
+
 class AdminHomeScreen extends StatelessWidget {
   const AdminHomeScreen({super.key});
 
@@ -12,6 +14,7 @@ class AdminHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        elevation: 0.0,
         leading: Builder(builder: (context) {
           return IconButton(
             onPressed: () {},
@@ -43,10 +46,11 @@ class AdminHomeScreen extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       drawer: const AdminDrawer(userName: "Mohamed Sobhy"),
-      body: ListView(
-        children: [
-          EmployeeItem(),
-        ],
+      body: ListView.builder(
+        itemCount: 2,
+        itemBuilder: (_, index) {
+          return DepartmentNameView();
+        },
       ),
     );
   }
