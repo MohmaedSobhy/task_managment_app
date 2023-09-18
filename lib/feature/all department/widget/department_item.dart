@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../core/color/app_color.dart';
 import '../../../core/model/department.dart';
 
-class DepartmentItem extends StatelessWidget {
+class CardDepartmentItem extends StatelessWidget {
   final Department department;
-  const DepartmentItem({super.key, required this.department});
+  const CardDepartmentItem({super.key, required this.department});
 
   @override
   Widget build(BuildContext context) {

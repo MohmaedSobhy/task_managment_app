@@ -4,4 +4,5 @@ abstract class EndPoints {
   static String addDepartment = "${baseUrl}department/store";
   static String addUser = "${baseUrl}user/store";
   static String allDeparment = "${baseUrl}department/index";
+  static String updateDepartment = "${baseUrl}department/update/";
 }

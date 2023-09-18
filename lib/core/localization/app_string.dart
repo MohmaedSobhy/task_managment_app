@@ -61,4 +61,5 @@ abstract class AppString {
   static const String departmentExist = "Department Name Already Exist";
   static const String addDepartmentSucceed = "Department Add Successfully";
   static const String today = "Today";
+  static const String allDepartment = "All Department";
 }

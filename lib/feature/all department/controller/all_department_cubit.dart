@@ -1,8 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:synchronized/extension.dart';
 import 'package:synchronized/synchronized.dart';
-
 import '../../../core/api/api.dart';
 import '../../../core/api/end_points.dart';
 import '../../../core/model/department.dart';
@@ -25,7 +23,7 @@ class AllDepartmentCubit extends Cubit<AllDepartmentState> {
 
   void loadAllDepartments() {
     API.getMethod(baseUrl: EndPoints.allDeparment).then((response) {
-      //print(response.body);
+      print(response.body);
     });
   }
 }
