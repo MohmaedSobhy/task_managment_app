@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_managment_app/feature/Admin%20Home/screen/admin_home_screen.dart';
-
 import 'core/color/app_color.dart';
 import 'core/route/app_route.dart';
 

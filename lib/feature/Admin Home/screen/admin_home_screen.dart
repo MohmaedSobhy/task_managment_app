@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task_managment_app/core/color/app_color.dart';
 import 'package:task_managment_app/core/widgets/custome_header_date.dart';
 import 'package:task_managment_app/feature/Admin%20Home/view/admin_drawer.dart';
-import 'package:task_managment_app/feature/Admin%20Home/widgets/employe_item.dart';
-
 import '../widgets/department_item.dart';
 
 class AdminHomeScreen extends StatelessWidget {
@@ -49,7 +47,7 @@ class AdminHomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: 2,
         itemBuilder: (_, index) {
-          return DepartmentNameView();
+          return const DepartmentNameView();
         },
       ),
     );
