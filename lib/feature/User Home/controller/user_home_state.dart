@@ -1,5 +1,7 @@
-abstract class AdminHomeState {}
+abstract class UserHomseState {}
 
-class UserHomeState extends AdminHomeState {}
+class UserHomeInitail extends UserHomseState {}
 
-class LoadUserInformation extends AdminHomeState {}
+class LoadUserInformation extends UserHomseState {}
+
+class ChangeDateState extends UserHomseState {}

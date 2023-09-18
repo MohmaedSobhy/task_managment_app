@@ -1,17 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
-import 'package:task_managment_app/feature/User%20Home/controller/user_home_state.dart';
 import '../../../core/api/api_keys.dart';
 import '../../../core/shared/shared_date.dart';
+import 'user_home_state.dart';
 
-class UserHomeCubit extends Cubit<UserHomeState> {
+class UserHomeCubit extends Cubit<UserHomseState> {
   String userName = '';
   bool isUser = false, isManager = false, isAdmin = false;
   static UserHomeCubit? _home;
   String currentDate = DateTime.now().toString().substring(0, 10);
   static final _lock = Lock();
+  DateTime selectedDate = DateTime.now();
 
-  UserHomeCubit() : super(UserHomeState());
+  UserHomeCubit() : super(UserHomeInitail());
 
   static UserHomeCubit get(context) {
     if (_home == null) {
@@ -23,7 +24,6 @@ class UserHomeCubit extends Cubit<UserHomeState> {
   }
 
   void initialData() async {
-    printObject();
     await Future.wait([_setUserName(), _defineUserType()]);
   }
 
@@ -45,9 +45,8 @@ class UserHomeCubit extends Cubit<UserHomeState> {
     });
   }
 
-  void printObject() {
-    print(identityHashCode(_home));
+  void onDateChange(DateTime dateTime) {
+    selectedDate = dateTime;
+    emit(ChangeDateState());
   }
-
-  // view All taskes
 }
