@@ -1,10 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:task_managment_app/core/api/api_keys.dart';
 import 'package:task_managment_app/core/shared/shared_date.dart';
-
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -12,6 +9,7 @@ class HomeCubit extends Cubit<HomeState> {
   bool isUser = false, isManager = false, isAdmin = false;
   static HomeCubit? _home;
   static final _lock = Lock();
+
   HomeCubit() : super(HomeInitial());
 
   static HomeCubit get(context) {
@@ -24,6 +22,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void initialData() async {
+    printObject();
     await Future.wait([_setUserName(), _defineUserType()]);
   }
 
@@ -44,4 +43,9 @@ class HomeCubit extends Cubit<HomeState> {
       }
     });
   }
+
+  void printObject() {
+    print(identityHashCode(_home));
+  }
+  // view All taskes
 }

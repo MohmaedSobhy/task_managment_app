@@ -21,7 +21,7 @@ class CustomeRadioGroup extends StatelessWidget {
       children: [
         ...List.generate(
           choises.length,
-          (index) => Flexible(
+          (index) => Expanded(
             child: RadioListTile(
               title: Text(choises[index]),
               activeColor: AppColor.darkColor,
@@ -35,3 +35,4 @@ class CustomeRadioGroup extends StatelessWidget {
     );
   }
 }
+// 

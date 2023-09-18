@@ -18,7 +18,5 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
     return BlocProvider.of(context);
   }
 
-  void loadManagers() {}
-
   void updateDepartment() {}
 }

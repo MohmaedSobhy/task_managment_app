@@ -14,7 +14,10 @@ class HomeScreen extends StatelessWidget {
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {},
         builder: (context, state) {
-          if (HomeCubit.get(context).userName.isEmpty) {}
+          if (state is HomeInitial) {
+            HomeCubit.get(context).initialData();
+            HomeCubit.get(context).printObject();
+          }
           return Scaffold(
             appBar: AppBar(),
             drawer: AdminDrawer(
