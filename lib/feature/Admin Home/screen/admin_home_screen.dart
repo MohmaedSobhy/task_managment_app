@@ -6,7 +6,6 @@ import 'package:task_managment_app/feature/Admin%20Home/controller/admin_cubit.d
 import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
 import 'package:task_managment_app/feature/Admin%20Home/view/admin_drawer.dart';
 import 'package:task_managment_app/feature/Admin%20Home/view/all_tasks.dart';
-import '../widgets/department_item.dart';
 
 class AdminHomeScreen extends StatelessWidget {
   const AdminHomeScreen({super.key});
@@ -53,7 +52,7 @@ class AdminHomeScreen extends StatelessWidget {
             ),
             backgroundColor: Colors.white,
             drawer: const AdminDrawer(userName: "Mohamed Sobhy"),
-            body: Column(
+            body: const Column(
               children: [
                 Expanded(child: AllTaskViews()),
               ],
