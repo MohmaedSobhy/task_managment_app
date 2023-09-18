@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:synchronized/synchronized.dart';
 
 import '../../../core/api/api.dart';
 import '../../../core/api/api_keys.dart';
@@ -14,10 +15,17 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController passwordController = TextEditingController();
   bool checkBoxValue = false;
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  static final Lock _lock = Lock();
+  static LoginCubit? _loginCubit;
   LoginCubit() : super(LoginCubitInitial());
 
   static LoginCubit get(context) {
-    return BlocProvider.of(context);
+    if (_loginCubit == null) {
+      _lock.synchronized(() {
+        _loginCubit = BlocProvider.of(context);
+      });
+    }
+    return _loginCubit!;
   }
 
   void checkBoxState() {
