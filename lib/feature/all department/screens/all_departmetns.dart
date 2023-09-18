@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:task_managment_app/core/localization/app_string.dart';
 
 import '../../all%20department/controller/all_department_cubit.dart';
@@ -15,16 +16,29 @@ class AllDepartmentScreen extends StatelessWidget {
       child: BlocConsumer<AllDepartmentCubit, AllDepartmentState>(
         listener: (context, state) {},
         builder: (context, state) {
+          if (state is AllDepartmentInitial) {
+            AllDepartmentCubit.get(context).loadAllDepartments();
+          }
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
+              leading: IconButton(
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  Get.back();
+                },
+              ),
               backgroundColor: Colors.white,
               centerTitle: true,
+              elevation: 0.0,
               title: Text(
                 AppString.allDepartment,
                 style: TextStyle(
                   color: Theme.of(context).primaryColor,
-                  fontSize: 15,
+                  fontSize: 20,
                 ),
               ),
             ),

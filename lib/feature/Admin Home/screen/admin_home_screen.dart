@@ -11,21 +11,25 @@ import 'package:task_managment_app/feature/Admin%20Home/widgets/department_item.
 import '../view/taped_bar_.dart';
 
 class AdminHomeScreen extends StatelessWidget {
-  const AdminHomeScreen({super.key});
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  AdminHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AdminCubit, AdminState>(
       listener: (context, state) {},
       builder: (context, state) {
-        print("first Screen");
         return Scaffold(
+          key: _scaffoldKey,
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0.0,
             leading: Builder(builder: (context) {
               return IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  _scaffoldKey.currentState?.openDrawer();
+                },
                 icon: const Icon(
                   Icons.menu,
                   color: Colors.black,
