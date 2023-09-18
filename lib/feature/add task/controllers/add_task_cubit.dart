@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
+import 'package:task_managment_app/core/model/department.dart';
 import 'add_task_state.dart';
 
 class AddTaskCubit extends Cubit<AddTaskState> {
@@ -14,6 +15,7 @@ class AddTaskCubit extends Cubit<AddTaskState> {
   TextEditingController startDate = TextEditingController();
   TextEditingController endDate = TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  List<Department> allDepartments = [];
 
   AddTaskCubit() : super(AddTaskInitial());
 
