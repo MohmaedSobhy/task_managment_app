@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
 import '../../../core/api/api_keys.dart';
@@ -30,8 +28,7 @@ class AllDepartmentCubit extends Cubit<AllDepartmentState> {
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
-    await API
-        .getMethod(baseUrl: EndPoints.allDeparment, token: token)
+    await APIManager.getMethod(baseUrl: EndPoints.allDeparment, token: token)
         .then((response) {
       Map<String, dynamic> json = jsonDecode(response.body);
       for (var item in json['data']) {

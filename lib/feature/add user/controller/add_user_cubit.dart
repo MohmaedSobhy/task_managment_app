@@ -31,8 +31,7 @@ class AddUserCubit extends Cubit<AddUserState> {
       token = value;
     });
 
-    API
-        .postMethod(
+    APIManager.postMethod(
             baseUrl: EndPoints.addUser,
             body: {
               "name": name.text.toString(),

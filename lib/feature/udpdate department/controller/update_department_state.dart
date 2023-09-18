@@ -7,3 +7,5 @@ class UpdateDepartmentInitial extends UpdateDepartmentState {}
 class UpdateDepartmentSuccess extends UpdateDepartmentState {}
 
 class FailedtoUpdate extends UpdateDepartmentState {}
+
+class LoadAllManagerSucceded extends UpdateDepartmentCubit {}

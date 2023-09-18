@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 
-abstract class API {
+abstract class APIManager {
   static Future<http.Response> getMethod({
     required String baseUrl,
     String? token,

@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
-
 import '../../Admin%20Home/controller/admin_state.dart';
 
 class AdminCubit extends Cubit<AdminState> {

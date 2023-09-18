@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
@@ -35,10 +35,15 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
-    API
-        .getMethod(baseUrl: EndPoints.allManagers, token: token)
-        .then((response) {
-      print(response.body.toString());
+
+    APIManager.getMethod(
+      baseUrl: EndPoints.allManagers,
+      token: token,
+    ).then((response) {
+      Map<String, dynamic> json = jsonDecode(response.body);
+      for (dynamic item in json['data']) {
+        managers.add(Manager.fromJson(item));
+      }
     });
   }
 }

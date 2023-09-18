@@ -28,7 +28,7 @@ class LoginCubit extends Cubit<LoginState> {
   void userLogin() {
     String email = emailController.text.toString();
     String password = passwordController.text.toString();
-    API.postMethod(baseUrl: EndPoints.login, body: {
+    APIManager.postMethod(baseUrl: EndPoints.login, body: {
       'email': email,
       'password': password,
     }).then((response) {

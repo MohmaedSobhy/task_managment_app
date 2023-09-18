@@ -21,8 +21,7 @@ class AddDepartmentCubit extends Cubit<AddDepartmentState> {
 
   void addDepartment() async {
     String token = await StorageHelper.getValue(key: APIKey.token);
-    API
-        .postMethod(
+    APIManager.postMethod(
             baseUrl: EndPoints.addDepartment,
             body: {
               APIKey.name: textEditingController.text.toString(),
