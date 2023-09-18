@@ -50,7 +50,11 @@ class AllDepartmentScreen extends StatelessWidget {
                       AllDepartmentCubit.get(context).departments[index],
                   onTap: () {
                     //print(RouteName.updateDepartment);
-                    Get.offNamed(RouteName.updateDepartment);
+                    Get.offNamed(
+                      RouteName.updateDepartment,
+                      arguments:
+                          AllDepartmentCubit.get(context).departments[index],
+                    );
                   },
                 );
               },

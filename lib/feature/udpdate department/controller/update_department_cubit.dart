@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
@@ -13,6 +14,8 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
   static UpdateDepartmentCubit? _updateDepartment;
   static final _lock = Lock();
   List<Manager> managers = [];
+  String selcectValue = '';
+  List<String> managersNames = [];
   TextEditingController name = TextEditingController();
   UpdateDepartmentCubit() : super(UpdateDepartmentInitial());
 
@@ -43,7 +46,31 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
       Map<String, dynamic> json = jsonDecode(response.body);
       for (dynamic item in json['data']) {
         managers.add(Manager.fromJson(item));
+        managersNames.add(item[APIKey.name]);
       }
+      selcectValue = managersNames[0];
     });
+  }
+
+  void updateDepartment({required int id}) async {
+    String token = "";
+    await StorageHelper.getValue(key: APIKey.token).then((value) {
+      token = value;
+    });
+
+    APIManager.postMethod(
+            baseUrl: "${EndPoints.updateDepartment}$id",
+            body: {
+              APIKey.name: name.text.toString(),
+              APIKey.managerId: (1).toString(),
+            },
+            token: token)
+        .then((response) {
+      print(response.body);
+    }).catchError((error) {});
+  }
+
+  int _getManagerId() {
+    return 0;
   }
 }

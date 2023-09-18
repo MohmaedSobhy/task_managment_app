@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:task_managment_app/core/model/department.dart';
+import 'package:task_managment_app/core/widgets/button.dart';
 import 'package:task_managment_app/core/widgets/text_form_field.dart';
 import '../../../core/localization/app_string.dart';
+import '../../../core/widgets/drop_down_list.dart';
 import '../controller/update_department_cubit.dart';
 
 class UpdateDepartmentScreen extends StatelessWidget {
-  const UpdateDepartmentScreen({super.key});
+  final Department department;
+  const UpdateDepartmentScreen({super.key, required this.department});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class UpdateDepartmentScreen extends StatelessWidget {
         builder: (context, state) {
           if (UpdateDepartmentCubit.get(context).name.text.isEmpty) {
             UpdateDepartmentCubit.get(context)
-                .setDepartmentName(departmentName: "My Name");
+                .setDepartmentName(departmentName: department.name);
           }
           if (UpdateDepartmentCubit.get(context).managers.isEmpty) {
             UpdateDepartmentCubit.get(context).loadAllManagers();
@@ -61,6 +65,32 @@ class UpdateDepartmentScreen extends StatelessWidget {
                     textInputType: TextInputType.name,
                     readOnly: true,
                   ),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.03,
+                  ),
+                  DropDownItems(
+                    label: AppString.managers,
+                    options: UpdateDepartmentCubit.get(context).managers,
+                    onChange: (value) {
+                      UpdateDepartmentCubit.get(context).selcectValue =
+                          value as String;
+                    },
+                    validator: (value) {
+                      if (value.toString().isEmpty) {
+                        return "Select Value";
+                      }
+                      return null;
+                    },
+                    selectedItem:
+                        UpdateDepartmentCubit.get(context).managers[0],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.03,
+                  ),
+                  CustomButton(
+                    onTap: () {},
+                    title: AppString.update,
+                  )
                 ],
               ),
             ),

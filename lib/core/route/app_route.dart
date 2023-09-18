@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managment_app/core/model/department.dart';
 import 'package:task_managment_app/feature/udpdate%20department/screens/update_department_secreen.dart';
 import '../../feature/Admin%20Home/screen/admin_home_screen.dart';
 import '../../feature/add%20department/screens/add_department.dart';
@@ -32,7 +33,8 @@ abstract class AppRoute {
         });
       case RouteName.updateDepartment:
         return MaterialPageRoute(builder: (_) {
-          return const UpdateDepartmentScreen();
+          Department department = settings.arguments as Department;
+          return UpdateDepartmentScreen(department: department);
         });
       case RouteName.allDepartment:
         return MaterialPageRoute(
