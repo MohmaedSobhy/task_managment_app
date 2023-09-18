@@ -46,13 +46,6 @@ class AdminDrawer extends StatelessWidget {
               Get.toNamed(RouteName.allDepartment);
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.dataset_rounded),
-            title: const Text(AppString.updateDepartment),
-            onTap: () {
-              Get.toNamed(RouteName.updateDepartment);
-            },
-          ),
         ],
       ),
     );
