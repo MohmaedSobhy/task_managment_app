@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
+import '../color/app_color.dart';
 
 class HeaderText extends StatelessWidget {
   final String title;

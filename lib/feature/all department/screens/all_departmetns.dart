@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/feature/all%20department/controller/all_department_cubit.dart';
+
+import '../../all%20department/controller/all_department_cubit.dart';
 
 class AllDepartmentScreen extends StatelessWidget {
   const AllDepartmentScreen({super.key});

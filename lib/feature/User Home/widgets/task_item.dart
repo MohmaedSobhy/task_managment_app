@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../core/color/app_color.dart';
 
@@ -57,7 +56,7 @@ class TaskItem extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.sizeOf(context).height * 0.02,
                         ),
-                        Text(
+                        const Text(
                           "Desgin a 20-minute HIIT workout routine.",
                           style: TextStyle(
                             fontSize: 15,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/widgets/button.dart';
-import 'package:task_managment_app/core/widgets/header_txt.dart';
-import 'package:task_managment_app/core/widgets/text_form_field.dart';
-import 'package:task_managment_app/feature/add%20user/controller/add_user_cubit.dart';
-import 'package:task_managment_app/feature/add%20user/view/radio_groub.dart';
+
+import '../../../core/localization/app_string.dart';
+import '../../../core/widgets/button.dart';
+import '../../../core/widgets/header_txt.dart';
+import '../../../core/widgets/text_form_field.dart';
+import '../../add%20user/controller/add_user_cubit.dart';
+import '../../add%20user/view/radio_groub.dart';
 
 class AddUserScreen extends StatelessWidget {
   const AddUserScreen({super.key});

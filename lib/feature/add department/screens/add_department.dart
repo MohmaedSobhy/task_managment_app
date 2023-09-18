@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/helper/show_snake_bar.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/widgets/button.dart';
-import 'package:task_managment_app/core/widgets/header_txt.dart';
-import 'package:task_managment_app/core/widgets/text_form_field.dart';
-import 'package:task_managment_app/feature/add%20department/controller/add_department_cubit.dart';
+import '../../../core/helper/show_snake_bar.dart';
+import '../../../core/localization/app_string.dart';
+import '../../../core/widgets/button.dart';
+import '../../../core/widgets/header_txt.dart';
+import '../../../core/widgets/text_form_field.dart';
+import '../../add%20department/controller/add_department_cubit.dart';
 
 class AddDepartmentScreen extends StatelessWidget {
   const AddDepartmentScreen({super.key});

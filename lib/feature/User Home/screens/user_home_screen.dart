@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/feature/Home/widgets/task_item.dart';
 
-import '../controller/home_cubit.dart';
+import '../../../core/widgets/custome_header_date.dart';
+
+import '../controller/user_home_cubit.dart';
+import '../controller/user_home_state.dart';
 import '../view/user_drawer.dart';
-import '../widgets/custome_header_date.dart';
+import '../widgets/task_item.dart';
 
-class HomeScreen extends StatelessWidget {
+class UserHomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  HomeScreen({super.key});
+  UserHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(),
-      child: BlocConsumer<HomeCubit, HomeState>(
+      create: (context) => UserHomeCubit(),
+      child: BlocConsumer<UserHomeCubit, UserHomeState>(
         listener: (context, state) {},
         builder: (context, state) {
           return Scaffold(
@@ -35,12 +37,12 @@ class HomeScreen extends StatelessWidget {
                 );
               }),
               title: CustomeDate(
-                date: HomeCubit.get(context).currentDate,
+                date: UserHomeCubit.get(context).currentDate,
               ),
               actions: [],
             ),
             drawer: AdminDrawer(
-              userName: HomeCubit.get(context).userName,
+              userName: UserHomeCubit.get(context).userName,
             ),
             backgroundColor: Colors.white,
             body: SafeArea(

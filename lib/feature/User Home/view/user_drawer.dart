@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/route/route_name.dart';
+import '../../../core/localization/app_string.dart';
+import '../../../core/route/route_name.dart';
 
 class AdminDrawer extends StatelessWidget {
   final String userName;

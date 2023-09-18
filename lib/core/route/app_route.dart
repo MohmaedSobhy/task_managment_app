@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/feature/Home/screens/home_screen.dart';
-import 'package:task_managment_app/feature/add%20department/screens/add_department.dart';
-import 'package:task_managment_app/feature/add%20user/screens/add_user_screen.dart';
-import 'package:task_managment_app/feature/update%20department/screens/update_department_screen.dart';
-import 'route_name.dart';
+import 'package:task_managment_app/feature/User%20Home/screens/user_home_screen.dart';
+import '../../feature/add%20department/screens/add_department.dart';
+import '../../feature/add%20user/screens/add_user_screen.dart';
 import '../../feature/login/screens/login_screen.dart';
+import '../../feature/update%20department/screens/update_department_screen.dart';
+import 'route_name.dart';
 
 abstract class AppRoute {
   static Route? ongenerateRoute(RouteSettings settings) {
@@ -16,7 +16,7 @@ abstract class AppRoute {
       case RouteName.adminHome:
         return MaterialPageRoute(
           builder: (_) {
-            return HomeScreen();
+            return UserHomeScreen();
           },
         );
       case RouteName.addUser:

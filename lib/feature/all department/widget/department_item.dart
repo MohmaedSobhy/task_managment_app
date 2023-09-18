@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/core/model/department.dart';
+
+import '../../../core/color/app_color.dart';
+import '../../../core/model/department.dart';
 
 class DepartmentItem extends StatelessWidget {
   final Department department;

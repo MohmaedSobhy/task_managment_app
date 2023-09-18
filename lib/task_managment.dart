@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/route/app_route.dart';
 
 import 'core/color/app_color.dart';
+import 'core/route/app_route.dart';
 
 class TaskMangmentApp extends StatelessWidget {
   const TaskMangmentApp({super.key});

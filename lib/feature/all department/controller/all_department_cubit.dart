@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:task_managment_app/core/api/api.dart';
-import 'package:task_managment_app/core/api/end_points.dart';
-import 'package:task_managment_app/core/model/department.dart';
+
+import '../../../core/api/api.dart';
+import '../../../core/api/end_points.dart';
+import '../../../core/model/department.dart';
 
 part 'all_department_state.dart';
 

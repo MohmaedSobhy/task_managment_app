@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/route/route_name.dart';
-import 'package:task_managment_app/core/widgets/button.dart';
-import 'package:task_managment_app/core/widgets/header_txt.dart';
-import 'package:task_managment_app/core/widgets/text_form_field.dart';
-import 'package:task_managment_app/feature/login/controller/login_cubit_cubit.dart';
-import 'package:task_managment_app/feature/login/widgets/check_box.dart';
+import '../../../core/localization/app_string.dart';
+import '../../../core/route/route_name.dart';
+import '../../../core/widgets/button.dart';
+import '../../../core/widgets/header_txt.dart';
+import '../../../core/widgets/text_form_field.dart';
+import '../controller/login_cubit_cubit.dart';
+import '../widgets/check_box.dart';
 import '../../../core/helper/show_snake_bar.dart';
 import '../controller/login_cubit_state.dart';
 

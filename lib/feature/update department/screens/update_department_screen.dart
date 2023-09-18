@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/widgets/button.dart';
-import 'package:task_managment_app/core/widgets/header_txt.dart';
-import 'package:task_managment_app/core/widgets/text_form_field.dart';
-import 'package:task_managment_app/feature/update%20department/controller/update_department_cubit.dart';
+import '../../../core/localization/app_string.dart';
+import '../../../core/widgets/button.dart';
+import '../../../core/widgets/header_txt.dart';
+import '../../../core/widgets/text_form_field.dart';
+import '../../update%20department/controller/update_department_cubit.dart';
 
 class UpdateDepartmentScreen extends StatelessWidget {
   const UpdateDepartmentScreen({super.key});

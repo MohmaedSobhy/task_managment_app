@@ -1,5 +1,5 @@
-import 'package:task_managment_app/core/api/api_keys.dart';
-import 'package:task_managment_app/core/model/manager.dart';
+import '../api/api_keys.dart';
+import 'manager.dart';
 
 class Department {
   final int id;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
+import '../color/app_color.dart';
+import '../localization/app_string.dart';
 
 class CustomeDate extends StatelessWidget {
   final String date;

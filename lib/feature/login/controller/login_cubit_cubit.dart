@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/api/api_keys.dart';
-import 'package:task_managment_app/core/shared/shared_date.dart';
-import 'package:task_managment_app/feature/login/controller/login_cubit_state.dart';
+import '../../../core/api/api_keys.dart';
+import '../../../core/shared/shared_date.dart';
+import 'login_cubit_state.dart';
 import '../../../core/api/api.dart';
 import '../../../core/api/end_points.dart';
 
