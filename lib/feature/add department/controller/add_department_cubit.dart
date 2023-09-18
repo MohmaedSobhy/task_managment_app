@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:synchronized/synchronized.dart';
 
 import '../../../core/api/api.dart';
 import '../../../core/api/api_keys.dart';
 import '../../../core/api/end_points.dart';
 import '../../../core/shared/shared_date.dart';
-
 part 'add_department_state.dart';
 
 class AddDepartmentCubit extends Cubit<AddDepartmentState> {
@@ -15,8 +15,16 @@ class AddDepartmentCubit extends Cubit<AddDepartmentState> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   AddDepartmentCubit() : super(AddDepartmentInitial());
 
+  static final Lock _lock = Lock();
+  static AddDepartmentCubit? _addDepartment;
+
   static AddDepartmentCubit get(context) {
-    return BlocProvider.of(context);
+    if (_addDepartment == null) {
+      _lock.synchronized(() {
+        _addDepartment ??= BlocProvider.of(context);
+      });
+    }
+    return _addDepartment!;
   }
 
   void addDepartment() async {
