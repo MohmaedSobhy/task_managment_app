@@ -20,6 +20,10 @@ class TapedIcon extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Icon(
+            icon,
+            color: color,
+          ),
           Text(
             txt,
             style: TextStyle(
@@ -27,10 +31,6 @@ class TapedIcon extends StatelessWidget {
               fontSize: 15,
             ),
           ),
-          Icon(
-            icon,
-            color: color,
-          )
         ],
       ),
     );

@@ -52,13 +52,13 @@ class EmployeeItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const TextIcon(
+                  const CustomTextIcon(
                     icon: Icons.email,
                     txt: "Email",
                     txtColor: AppColor.darkColor,
                     size: 15,
                   ),
-                  const TextIcon(
+                  const CustomTextIcon(
                     icon: Icons.phone,
                     txt: "Phone",
                     txtColor: AppColor.darkColor,

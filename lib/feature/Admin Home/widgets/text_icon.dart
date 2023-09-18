@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:task_managment_app/core/color/app_color.dart';
 
-class TextIcon extends StatelessWidget {
+class CustomTextIcon extends StatelessWidget {
   final IconData icon;
   final String txt;
   final Color txtColor;
   final double size;
-  const TextIcon(
+  const CustomTextIcon(
       {super.key,
       required this.icon,
       required this.txt,
