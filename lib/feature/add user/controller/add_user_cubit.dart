@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:synchronized/synchronized.dart';
 
 import '../../../core/api/api.dart';
 import '../../../core/api/api_keys.dart';
@@ -15,12 +16,20 @@ class AddUserCubit extends Cubit<AddUserState> {
   TextEditingController phone = TextEditingController();
   TextEditingController password = TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+
+  static AddUserCubit? _addUserCubit;
+  static final Lock _lock = Lock();
   String user = AppString.users[0];
 
   AddUserCubit() : super(AddUserInitial());
 
   static AddUserCubit get(context) {
-    return BlocProvider.of(context);
+    if (_addUserCubit == null) {
+      _lock.synchronized(() {
+        _addUserCubit ??= BlocProvider.of(context);
+      });
+    }
+    return _addUserCubit!;
   }
 
   void addUser() async {
