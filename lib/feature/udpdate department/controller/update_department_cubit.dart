@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
 import '../../../core/api/api_keys.dart';
 import '../../../core/api/end_points.dart';
-import '../../../core/model/manager.dart';
 import '../../../core/shared/shared_date.dart';
 import '../../../core/api/api.dart';
 part 'update_department_state.dart';
@@ -13,9 +11,9 @@ part 'update_department_state.dart';
 class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
   static UpdateDepartmentCubit? _updateDepartment;
   static final _lock = Lock();
-  List<Manager> managers = [];
+  List<String> managers = [];
+  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   String selcectValue = '';
-  List<String> managersNames = [];
   TextEditingController name = TextEditingController();
   UpdateDepartmentCubit() : super(UpdateDepartmentInitial());
 
@@ -30,11 +28,13 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
 
   void setDepartmentName({required String departmentName}) {
     name.text = departmentName;
-    emit(UpdateDepartmentInitial());
+    print("ehll");
+    emit(UpdateDepartmentSuccess());
   }
 
   void loadAllManagers() async {
     String token = "";
+    print('hree');
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
@@ -44,11 +44,15 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
       token: token,
     ).then((response) {
       Map<String, dynamic> json = jsonDecode(response.body);
+      String value = '';
       for (dynamic item in json['data']) {
-        managers.add(Manager.fromJson(item));
-        managersNames.add(item[APIKey.name]);
+        // ignore: prefer_interpolation_to_compose_strings
+        value = "${item[APIKey.id]}-" + item[APIKey.name];
+        managers.add(value);
       }
-      selcectValue = managersNames[0];
+      emit(LoadAllManagerSuccess());
+    }).catchError((error) {
+      print(error);
     });
   }
 
@@ -57,12 +61,12 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
-
+    int managerId = _getManagerId();
     APIManager.postMethod(
             baseUrl: "${EndPoints.updateDepartment}$id",
             body: {
               APIKey.name: name.text.toString(),
-              APIKey.managerId: (1).toString(),
+              APIKey.managerId: (managerId).toString(),
             },
             token: token)
         .then((response) {
@@ -71,6 +75,8 @@ class UpdateDepartmentCubit extends Cubit<UpdateDepartmentState> {
   }
 
   int _getManagerId() {
-    return 0;
+    int index = selcectValue.indexOf('-');
+    String id = selcectValue.substring(0, index);
+    return int.parse(id);
   }
 }

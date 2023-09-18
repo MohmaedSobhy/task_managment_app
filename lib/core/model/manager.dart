@@ -4,7 +4,7 @@ class Manager {
   int? id;
   String? name;
   String? email;
-  String? phone;
+  int? phone;
   String? status;
   String? userType;
 
