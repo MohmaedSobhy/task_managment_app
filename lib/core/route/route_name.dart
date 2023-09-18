@@ -8,4 +8,5 @@ abstract class RouteName {
   static const String userHome = "User Home";
   static const String managerHome = "Manager Home";
   static const String allDepartment = " All Department";
+  static const String addtask = "Add Task";
 }
