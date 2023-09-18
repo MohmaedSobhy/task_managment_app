@@ -1,8 +1,18 @@
 import 'package:http/http.dart' as http;
 
 abstract class API {
-  static Future<http.Response> getMethod({required String baseUrl}) async {
-    http.Response response = await http.get(Uri.parse(baseUrl));
+  static Future<http.Response> getMethod({
+    required String baseUrl,
+    String? token,
+  }) async {
+    Map<String, String> headers = {};
+    if (token != null) {
+      headers.addAll({
+        'Authorization': 'Bearer $token',
+      });
+    }
+    http.Response response =
+        await http.get(Uri.parse(baseUrl), headers: headers);
     if (response.statusCode == 200) {
       return response;
     }
