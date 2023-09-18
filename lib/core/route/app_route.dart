@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_managment_app/core/model/department.dart';
+import 'package:task_managment_app/feature/add%20task/screens/add_task_screen.dart';
 import 'package:task_managment_app/feature/udpdate%20department/screens/update_department_secreen.dart';
 import '../../feature/Admin%20Home/screen/admin_home_screen.dart';
 import '../../feature/add%20department/screens/add_department.dart';
@@ -40,6 +41,12 @@ abstract class AppRoute {
         return MaterialPageRoute(
           builder: (_) {
             return const AllDepartmentScreen();
+          },
+        );
+      case RouteName.addTask:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const AddTaskScreen();
           },
         );
     }

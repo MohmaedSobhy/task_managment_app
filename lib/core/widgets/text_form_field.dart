@@ -8,6 +8,7 @@ class CustomeTextFormField extends StatelessWidget {
   final String hint;
   final bool? readOnly;
   final TextInputType textInputType;
+  final int? maxLines;
 
   CustomeTextFormField({
     super.key,
@@ -16,6 +17,7 @@ class CustomeTextFormField extends StatelessWidget {
     required this.hint,
     required this.textInputType,
     this.readOnly,
+    this.maxLines,
   });
 
   @override
@@ -23,6 +25,7 @@ class CustomeTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: onValidate,
+      maxLines: (maxLines == null) ? 1 : maxLines!,
       readOnly: readOnly == null ? false : readOnly!,
       cursorColor: Theme.of(context).primaryColor,
       keyboardType: textInputType,
