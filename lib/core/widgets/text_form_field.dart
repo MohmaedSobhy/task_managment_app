@@ -6,6 +6,7 @@ class CustomeTextFormField extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   var onValidate;
   final String hint;
+  final bool? readOnly;
   final TextInputType textInputType;
 
   CustomeTextFormField({
@@ -14,6 +15,7 @@ class CustomeTextFormField extends StatelessWidget {
     this.onValidate,
     required this.hint,
     required this.textInputType,
+    this.readOnly,
   });
 
   @override
@@ -21,6 +23,7 @@ class CustomeTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: onValidate,
+      readOnly: readOnly == null ? false : readOnly!,
       cursorColor: Theme.of(context).primaryColor,
       keyboardType: textInputType,
       decoration: InputDecoration(

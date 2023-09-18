@@ -1,16 +1,20 @@
 import '../api/api_keys.dart';
 
 class Manager {
-  final int id;
-  final String name;
-  final String email;
-  final String phone;
+  int? id;
+  String? name;
+  String? email;
+  String? phone;
+  String? status;
+  String? userType;
 
   Manager({
     required this.id,
     required this.name,
     required this.email,
     required this.phone,
+    required this.status,
+    required this.userType,
   });
 
   factory Manager.fromJson(Map<String, dynamic> data) {
@@ -19,6 +23,8 @@ class Manager {
       name: data[APIKey.name],
       email: data[APIKey.email],
       phone: data[APIKey.phone],
+      userType: data[APIKey.usertype],
+      status: data[APIKey.status],
     );
   }
 }
