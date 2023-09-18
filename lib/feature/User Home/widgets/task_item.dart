@@ -56,7 +56,8 @@ class TaskItem extends StatelessWidget {
                           style: TextStyle(
                               color: AppColor.darkColor,
                               overflow: TextOverflow.ellipsis,
-                              fontSize: 25),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
                         ),
                         SizedBox(
                           height: MediaQuery.sizeOf(context).height * 0.02,

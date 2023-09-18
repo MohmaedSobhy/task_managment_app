@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_managment_app/core/widgets/circle_precent_indicator.dart';
 import 'package:task_managment_app/feature/User%20Home/controller/user_home_state.dart';
 import 'package:task_managment_app/feature/User%20Home/view/show_calender.dart';
+import 'package:task_managment_app/feature/User%20Home/widgets/task_item.dart';
 import '../../../core/widgets/custome_header_date.dart';
 import '../controller/user_home_cubit.dart';
 import '../view/user_drawer.dart';
@@ -73,13 +74,25 @@ class UserHomeScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             body: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ListView(
-                  children: const [
-                    ShowCalander(),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.sizeOf(context).width * 0.01,
+                  ),
+                  child: Column(
+                    children: [
+                      const ShowCalander(),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.01,
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: 5,
+                          itemBuilder: (_, index) {
+                            return const TaskItem(state: "NEW");
+                          },
+                        ),
+                      )
+                    ],
+                  )),
             ),
           );
         },
