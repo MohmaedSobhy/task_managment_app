@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
-import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
+
+import '../../Admin%20Home/controller/admin_state.dart';
 
 class AdminCubit extends Cubit<AdminState> {
   static AdminCubit? _adminCubit;

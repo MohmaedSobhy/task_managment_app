@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/core/widgets/task_item.dart';
+
+import '../../../core/widgets/task_item.dart';
 
 class AllTaskViews extends StatelessWidget {
   const AllTaskViews({super.key});

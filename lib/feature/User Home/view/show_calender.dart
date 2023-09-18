@@ -1,8 +1,8 @@
 import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/feature/User%20Home/controller/user_home_cubit.dart';
+import '../../../core/color/app_color.dart';
+import '../../User%20Home/controller/user_home_cubit.dart';
 
 import '../controller/user_home_state.dart';
 

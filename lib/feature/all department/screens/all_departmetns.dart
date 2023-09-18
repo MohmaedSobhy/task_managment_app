@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
-import 'package:task_managment_app/core/route/route_name.dart';
+import '../../../core/localization/app_string.dart';
+import '../../../core/route/route_name.dart';
 import '../../all%20department/controller/all_department_cubit.dart';
 import '../widget/department_item.dart';
 

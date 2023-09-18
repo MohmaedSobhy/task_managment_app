@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/feature/Admin%20Home/widgets/text_icon.dart';
+
+import '../../../core/color/app_color.dart';
+import '../../Admin%20Home/widgets/text_icon.dart';
 
 class EmployeeItem extends StatelessWidget {
   const EmployeeItem({super.key});

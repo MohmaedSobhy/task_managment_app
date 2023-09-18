@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/localization/app_string.dart';
 
+import '../../../core/localization/app_string.dart';
 import '../controller/update_department_cubit.dart';
 
 class UpdateDepartmentScreen extends StatelessWidget {

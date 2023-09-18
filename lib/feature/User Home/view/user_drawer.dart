@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../core/localization/app_string.dart';
 import '../../../core/route/route_name.dart';
 

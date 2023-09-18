@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/color/app_color.dart';
 import '../../../core/model/department.dart';
 

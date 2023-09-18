@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/feature/Admin%20Home/widgets/employe_item.dart';
+import '../../../core/color/app_color.dart';
+import '../../Admin%20Home/widgets/employe_item.dart';
 
 class DepartmentNameView extends StatelessWidget {
   const DepartmentNameView({super.key});

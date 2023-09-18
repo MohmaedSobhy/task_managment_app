@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/feature/Admin%20Home/controller/admin_cubit.dart';
-import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
-import 'package:task_managment_app/feature/Admin%20Home/widgets/tap_icon.dart';
+import '../../Admin%20Home/controller/admin_cubit.dart';
+import '../../Admin%20Home/controller/admin_state.dart';
+import '../../Admin%20Home/widgets/tap_icon.dart';
 
 class CustomTabBar extends StatelessWidget {
   const CustomTabBar({super.key});

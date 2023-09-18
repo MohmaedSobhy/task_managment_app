@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:task_managment_app/feature/Admin%20Home/screen/admin_home_screen.dart';
-import 'package:task_managment_app/feature/all%20department/screens/all_departmetns.dart';
 import 'package:task_managment_app/feature/udpdate%20department/screens/update_department_secreen.dart';
+import '../../feature/Admin%20Home/screen/admin_home_screen.dart';
 import '../../feature/add%20department/screens/add_department.dart';
 import '../../feature/add%20user/screens/add_user_screen.dart';
+import '../../feature/all%20department/screens/all_departmetns.dart';
 import '../../feature/login/screens/login_screen.dart';
 import 'route_name.dart';
 

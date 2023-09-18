@@ -1,12 +1,10 @@
-import 'dart:html';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
-import 'package:task_managment_app/core/api/api_keys.dart';
-import 'package:task_managment_app/core/api/end_points.dart';
-import 'package:task_managment_app/core/model/manager.dart';
-import 'package:task_managment_app/core/shared/shared_date.dart';
+import '../../../core/api/api_keys.dart';
+import '../../../core/api/end_points.dart';
+import '../../../core/model/manager.dart';
+import '../../../core/shared/shared_date.dart';
 
 import '../../../core/api/api.dart';
 part 'update_department_state.dart';

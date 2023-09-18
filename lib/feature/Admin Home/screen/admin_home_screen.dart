@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_managment_app/core/color/app_color.dart';
-import 'package:task_managment_app/core/widgets/custome_header_date.dart';
-import 'package:task_managment_app/feature/Admin%20Home/controller/admin_cubit.dart';
-import 'package:task_managment_app/feature/Admin%20Home/controller/admin_state.dart';
-import 'package:task_managment_app/feature/Admin%20Home/view/admin_drawer.dart';
-import 'package:task_managment_app/feature/Admin%20Home/view/all_tasks.dart';
-import 'package:task_managment_app/feature/Admin%20Home/widgets/department_item.dart';
 
+import '../../../core/color/app_color.dart';
+import '../../../core/widgets/custome_header_date.dart';
+import '../../Admin%20Home/controller/admin_cubit.dart';
+import '../../Admin%20Home/controller/admin_state.dart';
+import '../../Admin%20Home/view/admin_drawer.dart';
+import '../../Admin%20Home/view/all_tasks.dart';
+import '../../Admin%20Home/widgets/department_item.dart';
 import '../view/taped_bar_.dart';
 
 class AdminHomeScreen extends StatelessWidget {
