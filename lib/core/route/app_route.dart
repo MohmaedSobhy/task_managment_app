@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task_managment_app/feature/add%20department/screens/add_department.dart';
 import 'package:task_managment_app/feature/add%20user/screens/add_user_screen.dart';
+import 'package:task_managment_app/feature/admin%20home/screens/admin_home_screen.dart';
 import 'package:task_managment_app/feature/update%20department/screens/update_department_screen.dart';
 import 'route_name.dart';
-import '../../feature/home/screens/home_screen.dart';
 import '../../feature/login/screens/login_screen.dart';
 
 abstract class AppRoute {
@@ -13,10 +13,10 @@ abstract class AppRoute {
         return MaterialPageRoute(builder: (_) {
           return const LoginScreen();
         });
-      case RouteName.home:
+      case RouteName.adminHome:
         return MaterialPageRoute(
           builder: (_) {
-            return const HomeScreen();
+            return const AdminHomeScreen();
           },
         );
       case RouteName.addUser:
