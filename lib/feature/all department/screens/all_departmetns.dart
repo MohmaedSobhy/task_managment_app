@@ -16,7 +16,7 @@ class AllDepartmentScreen extends StatelessWidget {
       child: BlocConsumer<AllDepartmentCubit, AllDepartmentState>(
         listener: (context, state) {},
         builder: (context, state) {
-          if (state is AllDepartmentInitial) {
+          if (AllDepartmentCubit.get(context).departments.isEmpty) {
             AllDepartmentCubit.get(context).loadAllDepartments();
           }
           return Scaffold(
@@ -49,6 +49,7 @@ class AllDepartmentScreen extends StatelessWidget {
                   department:
                       AllDepartmentCubit.get(context).departments[index],
                   onTap: () {
+                    //print(RouteName.updateDepartment);
                     Get.offNamed(RouteName.updateDepartment);
                   },
                 );

@@ -30,14 +30,14 @@ class AllDepartmentCubit extends Cubit<AllDepartmentState> {
     await StorageHelper.getValue(key: APIKey.token).then((value) {
       token = value;
     });
-    API
+    await API
         .getMethod(baseUrl: EndPoints.allDeparment, token: token)
         .then((response) {
       Map<String, dynamic> json = jsonDecode(response.body);
       for (var item in json['data']) {
         departments.add(Department.fromJson(data: item));
       }
+      emit(AllDepartmentLoadSucceed());
     });
-    emit(AllDepartmentLoadSucceed());
   }
 }
