@@ -1,12 +1,10 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:task_managment_app/core/api/api.dart';
 import 'package:task_managment_app/core/api/api_keys.dart';
 import 'package:task_managment_app/core/api/end_points.dart';
-import 'package:task_managment_app/core/model/department.dart';
 import 'package:task_managment_app/core/shared/shared_date.dart';
 import '../../../core/model/employee.dart';
 import 'add_task_state.dart';

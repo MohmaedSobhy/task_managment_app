@@ -64,4 +64,5 @@ abstract class AppString {
   static const String allDepartment = "All Department";
 
   static const String managers = "Managers";
+  static const String tapToEdit = "tap to edit";
 }

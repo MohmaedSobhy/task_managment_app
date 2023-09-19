@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:task_managment_app/feature/edit%20task/screens/edit_task_screen.dart';
 import 'feature/Admin%20Home/controller/admin_cubit.dart';
 import 'core/color/app_color.dart';
 import 'core/route/app_route.dart';
@@ -18,7 +19,8 @@ class TaskMangmentApp extends StatelessWidget {
           primaryColor: AppColor.darkColor,
           useMaterial3: true,
         ),
-        onGenerateRoute: AppRoute.ongenerateRoute,
+        // onGenerateRoute: AppRoute.ongenerateRoute,
+        home: EditTaskScreen(),
       ),
     );
   }
