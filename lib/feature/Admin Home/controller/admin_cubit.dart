@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:task_managment_app/core/color/app_color.dart';
 import '../../Admin%20Home/controller/admin_state.dart';
