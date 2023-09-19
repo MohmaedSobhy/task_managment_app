@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   http: ^1.1.0
   percent_indicator: ^4.2.3
+  syncfusion_flutter_datepicker: ^23.1.36
   synchronized: ^3.1.0
 
 dev_dependencies:

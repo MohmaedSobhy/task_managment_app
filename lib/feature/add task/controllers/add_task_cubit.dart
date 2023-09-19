@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:synchronized/synchronized.dart';
+import 'package:task_managment_app/core/api/api.dart';
+import 'package:task_managment_app/core/api/api_keys.dart';
+import 'package:task_managment_app/core/api/end_points.dart';
 import 'package:task_managment_app/core/model/department.dart';
+import 'package:task_managment_app/core/shared/shared_date.dart';
 import 'add_task_state.dart';
 
 class AddTaskCubit extends Cubit<AddTaskState> {
@@ -11,8 +15,6 @@ class AddTaskCubit extends Cubit<AddTaskState> {
   TextEditingController description = TextEditingController();
   TextEditingController employee = TextEditingController();
   TextEditingController department = TextEditingController();
-  TextEditingController startDate = TextEditingController();
-  TextEditingController endDate = TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   List<Department> allDepartments = [];
 
@@ -25,5 +27,16 @@ class AddTaskCubit extends Cubit<AddTaskState> {
       });
     }
     return _taskCubit!;
+  }
+
+  void addTask() async {
+    String token = "";
+    await StorageHelper.getValue(key: APIKey.token).then((value) {
+      token = value;
+    });
+    APIManager.postMethod(baseUrl: EndPoints.baseUrl, body: {}, token: token)
+        .then((response) {
+      print(response.body);
+    });
   }
 }

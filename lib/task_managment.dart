@@ -16,6 +16,7 @@ class TaskMangmentApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: AppColor.darkColor,
+          useMaterial3: true,
         ),
         onGenerateRoute: AppRoute.ongenerateRoute,
       ),

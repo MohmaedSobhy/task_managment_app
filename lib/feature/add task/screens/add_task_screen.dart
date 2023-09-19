@@ -5,6 +5,7 @@ import 'package:task_managment_app/core/widgets/header_txt.dart';
 import 'package:task_managment_app/core/widgets/text_form_field.dart';
 import 'package:task_managment_app/feature/add%20task/controllers/add_task_cubit.dart';
 import 'package:task_managment_app/feature/add%20task/controllers/add_task_state.dart';
+import 'package:task_managment_app/feature/add%20task/views/date_picker.dart';
 import '../../../core/localization/app_string.dart';
 
 class AddTaskScreen extends StatelessWidget {
@@ -21,52 +22,65 @@ class AddTaskScreen extends StatelessWidget {
             child: Scaffold(
               body: Form(
                 key: AddTaskCubit.get(context).formkey,
-                child: ListView(
-                  children: [
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).height * 0.08,
-                    ),
-                    const HeaderText(
-                      decription: AppString.addTaskDecription,
-                      title: AppString.addTask,
-                    ),
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).height * 0.02,
-                    ),
-                    CustomeTextFormField(
-                      controller: AddTaskCubit.get(context).title,
-                      hint: AppString.title,
-                      textInputType: TextInputType.text,
-                      onValidate: (value) {
-                        if (value.toString().isEmpty) {
-                          return "Enter Title";
-                        }
-                        return null;
-                      },
-                    ),
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).height * 0.02,
-                    ),
-                    CustomeTextFormField(
-                      controller: AddTaskCubit.get(context).description,
-                      hint: AppString.description,
-                      textInputType: TextInputType.text,
-                      maxLines: 5,
-                      onValidate: (value) {
-                        if (value.toString().isEmpty) {
-                          return "Enter Description";
-                        }
-                        return null;
-                      },
-                    ),
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).height * 0.02,
-                    ),
-                    CustomButton(
-                      onTap: () {},
-                      title: AppString.create,
-                    )
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.sizeOf(context).width * 0.02,
+                  ),
+                  child: ListView(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.01,
+                      ),
+                      const HeaderText(
+                        decription: AppString.addTaskDecription,
+                        title: AppString.addTask,
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
+                      ShowTimeDatePicker(
+                        onChanged: (data) {
+                          print(data.value);
+                        },
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
+                      CustomeTextFormField(
+                        controller: AddTaskCubit.get(context).title,
+                        hint: AppString.title,
+                        textInputType: TextInputType.text,
+                        onValidate: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Enter Title";
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
+                      CustomeTextFormField(
+                        controller: AddTaskCubit.get(context).description,
+                        hint: AppString.description,
+                        textInputType: TextInputType.text,
+                        maxLines: 5,
+                        onValidate: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Enter Description";
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
+                      CustomButton(
+                        onTap: () {},
+                        title: AppString.create,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
