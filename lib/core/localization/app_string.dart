@@ -73,4 +73,6 @@ abstract class AppString {
     'NOT COMPLETED',
     'EXPIRED'
   ];
+
+  static const String selectEndDate = "Select End Date";
 }

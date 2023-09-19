@@ -1,10 +1,11 @@
 abstract class EndPoints {
-  static String baseUrl = "https://tasksapp.integration25.com/api/";
-  static String login = "${baseUrl}auth/login";
-  static String addDepartment = "${baseUrl}department/store";
-  static String addUser = "${baseUrl}user/store";
-  static String allDeparment = "${baseUrl}department/index";
-  static String updateDepartment = "${baseUrl}department/update/";
-  static String allManagers = "${baseUrl}user/show-managers";
-  static String allEmployee = "${baseUrl}user/index";
+  static const String _baseUrl = "https://tasksapp.integration25.com/api/";
+  static const String login = "${_baseUrl}auth/login";
+  static const String addDepartment = "${_baseUrl}department/store";
+  static const String addUser = "${_baseUrl}user/store";
+  static const String allDeparment = "${_baseUrl}department/index";
+  static const String updateDepartment = "${_baseUrl}department/update/";
+  static const String allManagers = "${_baseUrl}user/show-managers";
+  static const String showallEmployee = "${_baseUrl}user/show-employees";
+  static const String addTask = "${_baseUrl}task/store";
 }

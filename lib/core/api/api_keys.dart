@@ -11,5 +11,9 @@ abstract class APIKey {
   static const String id = 'id';
   static const String manager = 'manager';
   static const String managerId = 'manager_id';
-  static const String departmentId = 'department_Id';
+  static const String departmentId = 'department_id';
+  static const String startDate = "start_date";
+  static const String endDate = "end_date";
+  static const String description = "description";
+  static const String employeeId = "employee_id";
 }

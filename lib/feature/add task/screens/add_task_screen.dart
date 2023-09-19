@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_managment_app/core/helper/show_toast_message.dart';
 import 'package:task_managment_app/core/widgets/button.dart';
+import 'package:task_managment_app/core/widgets/drop_down_list.dart';
 import 'package:task_managment_app/core/widgets/header_txt.dart';
 import 'package:task_managment_app/core/widgets/text_form_field.dart';
 import 'package:task_managment_app/feature/add%20task/controllers/add_task_cubit.dart';
@@ -18,6 +20,9 @@ class AddTaskScreen extends StatelessWidget {
       child: BlocConsumer<AddTaskCubit, AddTaskState>(
         listener: (context, state) {},
         builder: (context, state) {
+          if (AddTaskCubit.get(context).allEmployees.isEmpty) {
+            AddTaskCubit.get(context).loadAllEmployee();
+          }
           return SafeArea(
             child: Scaffold(
               body: Form(
@@ -40,7 +45,8 @@ class AddTaskScreen extends StatelessWidget {
                       ),
                       ShowTimeDatePicker(
                         onChanged: (data) {
-                          print(data.value);
+                          AddTaskCubit.get(context).dateTime = data;
+                          //  print(data.value.startDate);
                         },
                       ),
                       SizedBox(
@@ -75,8 +81,41 @@ class AddTaskScreen extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.02,
                       ),
+                      DropDownItems(
+                        label: "Employee",
+                        options: AddTaskCubit.get(context).allEmployees,
+                        selectedItem: AddTaskCubit.get(context).currentEmployee,
+                        validator: (value) {
+                          if (value.toString().isEmpty) {
+                            return "Should Assign Employee";
+                          }
+                          return null;
+                        },
+                        onChange: (value) {
+                          AddTaskCubit.get(context).currentEmployee = value;
+                        },
+                      ),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
                       CustomButton(
-                        onTap: () {},
+                        onTap: () {
+                          if (AddTaskCubit.get(context)
+                                  .dateTime
+                                  .value
+                                  .endDate ==
+                              null) {
+                            ShowToast.showMessage(
+                              message: AppString.selectEndDate,
+                              color: Colors.red,
+                            );
+                          } else if (AddTaskCubit.get(context)
+                              .formkey
+                              .currentState!
+                              .validate()) {
+                            AddTaskCubit.get(context).addTask();
+                          }
+                        },
                         title: AppString.create,
                       )
                     ],
