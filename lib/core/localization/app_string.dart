@@ -75,4 +75,5 @@ abstract class AppString {
   ];
 
   static const String selectEndDate = "Select End Date";
+  static const String taskAdd = "Task Added Succefully";
 }

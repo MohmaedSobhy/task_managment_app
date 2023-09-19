@@ -7,7 +7,9 @@ import 'package:synchronized/synchronized.dart';
 import 'package:task_managment_app/core/api/api.dart';
 import 'package:task_managment_app/core/api/api_keys.dart';
 import 'package:task_managment_app/core/api/end_points.dart';
+import 'package:task_managment_app/core/helper/show_toast_message.dart';
 import 'package:task_managment_app/core/shared/shared_date.dart';
+import '../../../core/localization/app_string.dart';
 import 'add_task_state.dart';
 
 class AddTaskCubit extends Cubit<AddTaskState> {
@@ -73,16 +75,10 @@ class AddTaskCubit extends Cubit<AddTaskState> {
             },
             token: token)
         .then((response) {
-      print(response.body);
-
-      if (response.statusCode == 200) {
-        _clearFileds();
-        print("Hello");
-        emit(AddTaskSuccefully());
+      if (response.statusCode == 201) {
+        ShowToast.showMessage(message: AppString.taskAdd, color: Colors.green);
       }
-    }).catchError((error) {
-      print(error);
-    });
+    }).catchError((error) {});
   }
 
   int _getEmployeeId() {
@@ -91,15 +87,7 @@ class AddTaskCubit extends Cubit<AddTaskState> {
     return int.parse(id);
   }
 
-  void _clearFileds() {
-    title.text = "";
-    description.text = "";
-    dateTime.value.startDate = DateTime.now();
-    dateTime.value.endDate = null;
-  }
-
   String getDateFormated(DateTime date) {
-    print(DateFormat('yyyy/MM/d').format(date));
     return DateFormat('yyyy/MM/d').format(date);
   }
 }
