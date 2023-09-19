@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../core/color/app_color.dart';
 import '../../../core/widgets/custome_header_date.dart';
 import '../../Admin%20Home/controller/admin_cubit.dart';
 import '../../Admin%20Home/controller/admin_state.dart';
@@ -22,61 +20,57 @@ class AdminHomeScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           key: _scaffoldKey,
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0.0,
-            leading: Builder(builder: (context) {
-              return IconButton(
-                onPressed: () {
-                  _scaffoldKey.currentState?.openDrawer();
-                },
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.black,
-                ),
-              );
-            }),
-            title: const CustomeDate(date: "9/18/2023"),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: AppColor.purble,
-                    borderRadius: BorderRadius.circular(10),
+          appBar: PreferredSize(
+            preferredSize: Size(
+              double.infinity,
+              MediaQuery.sizeOf(context).height * 0.07,
+            ),
+            child: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0.0,
+              leading: Builder(builder: (context) {
+                return IconButton(
+                  onPressed: () {
+                    _scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.black,
                   ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+                );
+              }),
+              title: const CustomeDate(date: "9/18/2023"),
+            ),
           ),
           backgroundColor: Colors.white,
           drawer: const AdminDrawer(userName: "Mohamed Sobhy"),
-          body: Column(
-            children: [
-              const CustomTabBar(),
-              SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.02,
-              ),
-              Visibility(
-                visible: AdminCubit.get(context).isClosed == false,
-                child: const Expanded(
-                  child: DepartmentNameView(),
+          body: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.sizeOf(context).width * 0.03,
+            ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).height * 0.02,
                 ),
-              ),
-              Visibility(
-                visible: AdminCubit.get(context).isClosed == true,
-                child: const Expanded(
-                  child: AllTaskViews(),
+                const CustomTabBar(),
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).height * 0.02,
                 ),
-              ),
-            ],
+                Visibility(
+                  visible: AdminCubit.get(context).isFirstView == false,
+                  child: const Expanded(
+                    child: DepartmentNameView(),
+                  ),
+                ),
+                Visibility(
+                  visible: AdminCubit.get(context).isFirstView == true,
+                  child: const Expanded(
+                    child: AllTaskViews(),
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },

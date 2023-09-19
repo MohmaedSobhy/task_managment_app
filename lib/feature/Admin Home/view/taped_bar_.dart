@@ -15,16 +15,23 @@ class CustomTabBar extends StatelessWidget {
         return Row(
           children: [
             TapedIcon(
-              color: Colors.black,
+              color: AdminCubit.get(context).usersTabColor,
               txt: "Users",
               icon: Icons.person,
               onTap: () {
-                print("hello");
                 AdminCubit.get(context).changeTabView();
               },
             ),
             SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.01,
+              width: MediaQuery.sizeOf(context).width * 0.05,
+            ),
+            TapedIcon(
+              color: AdminCubit.get(context).tasksTabColor,
+              txt: "Task",
+              icon: Icons.book,
+              onTap: () {
+                AdminCubit.get(context).changeTabView();
+              },
             ),
           ],
         );
