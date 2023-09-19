@@ -23,7 +23,7 @@ class AdminHomeScreen extends StatelessWidget {
           appBar: PreferredSize(
             preferredSize: Size(
               double.infinity,
-              MediaQuery.sizeOf(context).height * 0.07,
+              MediaQuery.sizeOf(context).height * 0.08,
             ),
             child: AppBar(
               backgroundColor: Colors.white,
