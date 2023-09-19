@@ -65,4 +65,12 @@ abstract class AppString {
 
   static const String managers = "Managers";
   static const String tapToEdit = "tap to edit";
+  static const List<String> allTaskStatus = [
+    'NEW',
+    'PROCESSING',
+    'CANCELLED',
+    'COMPLETED',
+    'NOT COMPLETED',
+    'EXPIRED'
+  ];
 }
